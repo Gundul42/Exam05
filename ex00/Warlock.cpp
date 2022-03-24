@@ -5,39 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 13:30:13 by graja             #+#    #+#             */
-/*   Updated: 2022/03/23 13:58:51 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 13:21:03 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 13:33:46 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Warlock.hpp"
 
-Warlock::Warlock(std::string name, std::string title): _name(name), _title(title)
+Warlock::Warlock(void)
+{}
+
+Warlock::Warlock(Warlock const & cpy)
 {
-	std::cout << _name << ": This looks like another boring day." << std::endl;
+	*this = cpy;
+}
+
+Warlock & Warlock::operator=(Warlock const & right)
+{
+	name = right.name;
+	title = right.title;
+	return (*this);
+}
+
+Warlock::Warlock(std::string n, std::string t): name(n), title(t)
+{
+	std::cout << name << ": This looks like another boring day." << std::endl;
 }
 
 Warlock::~Warlock(void)
 {
-	std::cout << _name << ": My job here is done!" << std::endl;
+	std::cout << name << ": My job here is done!" << std::endl;
 }
 
 std::string const &	Warlock::getName(void) const
 {
-	return (_name);
+	return (name);
 }
 
 std::string const &	Warlock::getTitle(void) const
 {
-	return (_title);
+	return (title);
 }
 
-void			Warlock::setTitle(std::string const & newtitle)
+void			Warlock::setTitle(std::string const & nt)
 {
-	_title = newtitle;
+	title = nt;
 }
-		
+
 void			Warlock::introduce(void) const
 {
-	std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
+	std::cout << name << ": I am " << name << ", " << title << "!" << std::endl;
 }
