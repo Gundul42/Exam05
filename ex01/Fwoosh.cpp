@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fwoosh.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 13:48:40 by graja             #+#    #+#             */
-/*   Updated: 2022/03/24 18:48:08 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 14:45:41 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 14:55:21 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Warlock.hpp"
-#include "ASpell.hpp"
-#include "ATarget.hpp"
 #include "Fwoosh.hpp"
-#include "Dummy.hpp"
 
-int	main(void)
+
+Fwoosh::Fwoosh(void): ASpell("Fwoosh", "fwooshed")
+{}
+
+Fwoosh::~Fwoosh(void)
+{}
+
+ASpell *	Fwoosh::clone(void) const
 {
-	Warlock test("jimmy", "the best");
-	Fwoosh	*lala = new Fwoosh;
-
-	test.learnSpell(lala->clone());
-	test.learnSpell(lala->clone());
-	test.introduce();
-	return (0);
+	return (new Fwoosh);
 }

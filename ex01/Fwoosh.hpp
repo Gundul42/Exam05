@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 18:49:47 by graja             #+#    #+#             */
-/*   Updated: 2022/03/23 18:55:46 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 14:42:00 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 14:53:30 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ class ASpell;
 
 class Fwoosh : public ASpell
 {
-	Fwoosh(std::string n, std::string e);
-	~Fwoosh(void);
-	Fwoosh(Fwoosh const & cpy);
+	public:
+		Fwoosh(void);
+		~Fwoosh(void);
+		
+		ASpell *	clone(void) const;
+};
 
-	Fwoosh &	operator=(Fwoosh const & right);
-}
+#endif

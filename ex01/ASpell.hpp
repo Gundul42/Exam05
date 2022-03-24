@@ -5,31 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 14:21:42 by graja             #+#    #+#             */
-/*   Updated: 2022/03/23 15:21:06 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 13:36:35 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 14:35:46 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ASPELL_H
 # define ASPELL_H
 
-# include <string>
 # include <iostream>
+# include <string>
+# include "ATarget.hpp"
+
+class ATarget;
 
 class ASpell
 {
+	private:
+		ASpell(void);
+		ASpell(ASpell const & cpy);
+		ASpell & operator=(ASpell const & right);
+
 	protected:
 		std::string	name;
 		std::string	effects;
 
 	public:
-		ASpell(std::string iname, std::string ieffect);
+		ASpell(std::string n, std::string e);
 		virtual ~ASpell(void);
 
-		std::string const	getName(void) const ;
-		std::string const	getEffects(void) const;
+		std::string	getName(void) const;
+		std::string	getEffects(void) const;
 
-		virtual	ASpell*			clone(void) const = 0;
+		void		launch(ATarget const & tgt) const;
+
+		virtual ASpell *	clone(void) const = 0;
 };
 
 #endif

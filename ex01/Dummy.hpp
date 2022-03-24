@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dummy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 13:48:40 by graja             #+#    #+#             */
-/*   Updated: 2022/03/24 18:48:08 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 15:33:39 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 15:41:37 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Warlock.hpp"
-#include "ASpell.hpp"
-#include "ATarget.hpp"
-#include "Fwoosh.hpp"
-#include "Dummy.hpp"
+#ifndef DUMMY_H
+# define DUMMY_H
 
-int	main(void)
+# include "ATarget.hpp"
+
+class Dummy : public ATarget
 {
-	Warlock test("jimmy", "the best");
-	Fwoosh	*lala = new Fwoosh;
+	Dummy(void);
+	~Dummy(void);
 
-	test.learnSpell(lala->clone());
-	test.learnSpell(lala->clone());
-	test.introduce();
-	return (0);
-}
+	ATarget *	clone(void) const;
+};
+
+#endif

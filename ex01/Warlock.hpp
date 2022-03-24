@@ -5,33 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 13:26:02 by graja             #+#    #+#             */
-/*   Updated: 2022/03/23 14:06:17 by graja            ###   ########.fr       */
+/*   Created: 2022/03/24 13:15:13 by graja             #+#    #+#             */
+/*   Updated: 2022/03/24 18:58:29 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WARLOCK_H
 # define WARLOCK_H
 
-# include <string>
+# include <vector>
 # include <iostream>
+# include <string>
+# include "ASpell.hpp"
+# include "ATarget.hpp"
 
 class Warlock
 {
 	private:
-		std::string const	_name;
-		std::string		_title;
+		std::string		name;
+		std::string		title;
+		std::vector<ASpell*>	spells;
 
+		Warlock(void);
+		Warlock(Warlock const & cpy);
+		Warlock & operator=(Warlock const & right);
+		
+		std::vector<ASpell*>::iterator	findSpell(std::string const & spl);
 
 	public:
-		Warlock(std::string name, std::string title);
+		Warlock(std::string n, std::string t);
 		~Warlock(void);
 
 		std::string const &	getName(void) const;
 		std::string const &	getTitle(void) const;
 
-		void			setTitle(std::string const & newtitle);
+		void			setTitle(std::string const & nt);
 		void			introduce(void) const;
+
+		void			learnSpell(ASpell * spell);
+		void			forgetSpell(std::string const & name);
+		void			launchSpell(std::string const & name,
+			       			ATarget const & tgt) const;
+
 };
 
 #endif
