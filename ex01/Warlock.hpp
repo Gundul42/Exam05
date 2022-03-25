@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:15:13 by graja             #+#    #+#             */
-/*   Updated: 2022/03/24 18:58:29 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 10:11:45 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ class Warlock
 
 		void			learnSpell(ASpell * spell);
 		void			forgetSpell(std::string const & name);
-		void			launchSpell(std::string const & name,
-			       			ATarget const & tgt) const;
+		void			launchSpell(std::string const & name, ATarget const & tgt);
 
 };
 

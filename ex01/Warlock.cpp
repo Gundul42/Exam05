@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:21:03 by graja             #+#    #+#             */
-/*   Updated: 2022/03/25 10:01:42 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 10:19:12 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,14 @@ void			Warlock::forgetSpell(std::string const & name)
 	spells.erase(in);
 }
 
-void			Warlock::launchSpell(std::string const & name,
-			       			ATarget const & tgt) const
+void			Warlock::launchSpell(std::string const & name, ATarget const & tgt)
 {
-	std::cout << name << " was launched at " << tgt.getType() << std::endl;
+	std::vector<ASpell*>::iterator in;
+
+	in = findSpell(name);
+	if (in == spells.end())
+		return ;
+	tgt.getHitBySpell(*(*in));
 }
 		
 std::vector<ASpell*>::iterator	Warlock::findSpell(std::string const & spl)
