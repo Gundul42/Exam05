@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:48:40 by graja             #+#    #+#             */
-/*   Updated: 2022/03/25 11:32:06 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 12:16:10 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "Fireball.hpp"
 #include "Polymorph.hpp"
 #include "BrickWall.hpp"
+#include "SpellBook.hpp"
 
 int	main(void)
 {
@@ -25,6 +26,8 @@ int	main(void)
 	Fwoosh		*lala = new Fwoosh;
 	Fireball	fire;
 	Dummy		dumm;
+	SpellBook	thebook;
+
 
 	test.learnSpell(lala->clone());
 	test.learnSpell(fire.clone());
@@ -33,6 +36,9 @@ int	main(void)
 	test.learnSpell(lala->clone());
 	test.launchSpell("Fwoosh", dumm);
 	test.launchSpell("Fireball", dumm);
+
+	thebook.learnSpell(&fire);
+	thebook.learnSpell(lala);
 	delete lala;
 
 	return (0);
