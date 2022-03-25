@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:21:03 by graja             #+#    #+#             */
-/*   Updated: 2022/03/24 19:03:59 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 10:01:42 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,15 @@ Warlock::Warlock(std::string n, std::string t): name(n), title(t), spells()
 
 Warlock::~Warlock(void)
 {
-	std::cout << name << ": My job here is done!" << std::endl;
+	std::vector<ASpell*>::iterator in;
 
+	in = spells.begin();
+	std::cout << name << ": My job here is done!" << std::endl;
+	while (in != spells.end())
+	{
+		delete *in;
+		in++;
+	}
 }
 
 std::string const &	Warlock::getName(void) const
@@ -66,9 +73,9 @@ void			Warlock::learnSpell(ASpell * spell)
 		std::cout << "I already know this" << std::endl;
 		return ;
 	}
-	std::cout << "learnSpell" << std::endl;
+	std::cout << spell->getName() << " spell learned" << std::endl;
 	spells.push_back(spell);
-	std::cout << spells.size() << " are now in memory" << std::endl;
+	std::cout << spells.size() << " spells are now in memory" << std::endl;
 }
 
 void			Warlock::forgetSpell(std::string const & name)

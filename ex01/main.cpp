@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:48:40 by graja             #+#    #+#             */
-/*   Updated: 2022/03/24 18:48:08 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 09:42:37 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ int	main(void)
 	test.learnSpell(lala->clone());
 	test.learnSpell(lala->clone());
 	test.introduce();
+	test.forgetSpell("Fwoosh");
+	test.learnSpell(lala->clone());
+	delete lala;
 	return (0);
 }
