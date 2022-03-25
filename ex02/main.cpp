@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:48:40 by graja             #+#    #+#             */
-/*   Updated: 2022/03/25 12:16:10 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 12:47:09 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	main(void)
 	SpellBook	thebook;
 
 
-	test.learnSpell(lala->clone());
-	test.learnSpell(fire.clone());
+	test.learnSpell(lala);
+	test.learnSpell(&fire);
 	test.introduce();
 	test.forgetSpell("Fwoosh");
-	test.learnSpell(lala->clone());
+	test.learnSpell(lala);
 	test.launchSpell("Fwoosh", dumm);
 	test.launchSpell("Fireball", dumm);
 

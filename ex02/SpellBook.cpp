@@ -18,6 +18,7 @@ SpellBook::~SpellBook(void)
 {
 	std::vector<ASpell*>::iterator in;
 
+	std::cout << "Spellbook destroyed" << std::endl;
 	in = book.begin();
 	while (in != book.end())
 	{

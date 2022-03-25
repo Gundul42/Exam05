@@ -6,31 +6,29 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 13:15:13 by graja             #+#    #+#             */
-/*   Updated: 2022/03/25 10:11:45 by graja            ###   ########.fr       */
+/*   Updated: 2022/03/25 12:27:28 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WARLOCK_H
 # define WARLOCK_H
 
-# include <vector>
 # include <iostream>
 # include <string>
 # include "ASpell.hpp"
 # include "ATarget.hpp"
+# include "SpellBook.hpp"
 
 class Warlock
 {
 	private:
 		std::string		name;
 		std::string		title;
-		std::vector<ASpell*>	spells;
+		SpellBook		book;
 
 		Warlock(void);
 		Warlock(Warlock const & cpy);
 		Warlock & operator=(Warlock const & right);
-		
-		std::vector<ASpell*>::iterator	findSpell(std::string const & spl);
 
 	public:
 		Warlock(std::string n, std::string t);
