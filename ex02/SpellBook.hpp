@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   SpellBook.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 11:38:13 by graja             #+#    #+#             */
-/*   Updated: 2022/03/25 11:50:08 by graja            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef SPELLBOOK_H
 # define SPELLBOOK_H
 
-# include <vector>
 # include <iostream>
+# include <vector>
 # include "ASpell.hpp"
 
 class SpellBook
@@ -25,15 +13,15 @@ class SpellBook
 		SpellBook(SpellBook const & cpy);
 		SpellBook & operator=(SpellBook const & right);
 		
-		std::vector<ASpell*>::iterator	findSpell(std::string const & spl);
+		std::vector<ASpell*>::iterator	findSpell(std::string str);
 
 	public:
 		SpellBook(void);
 		~SpellBook(void);
-
+		
 		void			learnSpell(ASpell * spell);
-		void			forgetSpell(std::string const & name);
-		ASpell *		createSpell(std::string const & name);
+		void			forgetSpell(std::string str);
+		void			launchSpell(std::string str, ATarget & tgt);
 };
 
 #endif
