@@ -1,15 +1,15 @@
 #ifndef BRICKWALL_H
-# define BRICKWALL_H
+#define BRICKWALL_H
 
-# include "ATarget.hpp"
+#include "ATarget.hpp"
 
-class BrickWall : public ATarget
+class BrickWall: public ATarget
 {
 	public:
 		BrickWall(void);
 		~BrickWall(void);
 
-		ATarget*	clone(void) const;
+		ATarget * clone(void) const;
 };
 
 #endif

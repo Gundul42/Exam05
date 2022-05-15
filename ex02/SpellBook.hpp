@@ -2,26 +2,28 @@
 # define SPELLBOOK_H
 
 # include <iostream>
-# include <vector>
-# include "ASpell.hpp"
+# include <string>
+# include <map>
+#include "ASpell.hpp"
+#include "ATarget.hpp"
 
 class SpellBook
 {
 	private:
-		std::vector<ASpell*>	book;
-
 		SpellBook(SpellBook const & cpy);
 		SpellBook & operator=(SpellBook const & right);
-		
-		std::vector<ASpell*>::iterator	findSpell(std::string str);
+
+		std::map<std::string, ASpell*>	book;
+
 
 	public:
 		SpellBook(void);
 		~SpellBook(void);
-		
-		void			learnSpell(ASpell * spell);
-		void			forgetSpell(std::string str);
-		void			launchSpell(std::string str, ATarget & tgt);
+
+		void	learnSpell(ASpell * s);
+		void	forgetSpell(std::string const & n);
+		ASpell *	createSpell(std::string const & n);
+
 };
 
 #endif

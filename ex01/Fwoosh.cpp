@@ -1,12 +1,11 @@
 #include "Fwoosh.hpp"
 
-Fwoosh::Fwoosh(void): ASpell("Fwoosh", "fwooshed")
-{}
+Fwoosh::Fwoosh(void): ASpell("Fwoosh", "fwooshed") {}
 
-Fwoosh::~Fwoosh(void)
-{}
+Fwoosh::~Fwoosh(void) {}
 
-ASpell*	Fwoosh::clone(void) const
+ASpell * Fwoosh::clone(void) const
 {
-	return (new Fwoosh);
+	return (new Fwoosh());
 }
+

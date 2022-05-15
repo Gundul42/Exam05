@@ -1,33 +1,27 @@
-#include "ATarget.hpp"
 
-		std::string	type;
+# include "ATarget.hpp"
 
-ATarget::ATarget(void)
-{}
+	ATarget::ATarget(void) {}
 
-ATarget::ATarget(ATarget const & cpy)
-{
-	*this = cpy;
-}
+	ATarget::ATarget(ATarget const & cpy) {*this = cpy;}
 
-ATarget & ATarget::operator=(ATarget const & right)
+	ATarget & ATarget::operator=(ATarget const & right)
 {
 	type = right.type;
-	return (*this);
+	return(*this);
 }
 
-ATarget::ATarget(std::string t): type(t)
-{}
 
-ATarget::~ATarget(void)
-{}
+ATarget::ATarget(std::string n): type(n) {}
 
-std::string const &	ATarget::getType(void) const
+ATarget::~ATarget(void) {}
+
+
+std::string	ATarget::getType(void) const { return type;}
+
+
+		void	ATarget::getHitBySpell(ASpell const & spl) const
 {
-	return (type);
+	std::cout << type << " has been " << spl.getEffects() << "!" << std::endl;
 }
 
-void ATarget::getHitBySpell(ASpell const & s) const
-{
-	std::cout << type << " has been " << s.getEffects() << "!" << std::endl;
-}

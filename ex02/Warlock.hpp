@@ -3,35 +3,36 @@
 
 # include <iostream>
 # include <string>
-# include "ASpell.hpp"
-# include "ATarget.hpp"
-# include "SpellBook.hpp"
+#include "ASpell.hpp"
+#include "ATarget.hpp"
+#include "SpellBook.hpp"
 
 class Warlock
 {
 	private:
-		std::string		name;
-		std::string		title;
-		SpellBook		book;
-
 		Warlock(void);
 		Warlock(Warlock const & cpy);
 		Warlock & operator=(Warlock const & right);
-		
-	public:
 
-		Warlock(std::string const name, std::string const title);
+		std::string	name;
+		std::string	title;
+		SpellBook	book;
+
+
+	public:
+		Warlock(std::string n, std::string t);
 		~Warlock(void);
 
-		std::string const &	getName(void) const;
-		std::string const &	getTitle(void) const;
-		void			setTitle(std::string const & nt);
+		std::string	getName(void) const;
+		std::string	getTitle(void) const;
 
-		void			introduce(void) const;
+		void		setTitle(std::string nt);
+		void		introduce(void) const;
 
-		void			learnSpell(ASpell * s);
-		void			forgetSpell(std::string s);
-		void			launchSpell(std::string str, ATarget & tgt);
+		void	learnSpell(ASpell * s);
+		void	forgetSpell(std::string n);
+		void	launchSpell(std::string n, ATarget & tgt);
+
 };
 
 #endif

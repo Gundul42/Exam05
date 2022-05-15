@@ -1,15 +1,15 @@
 #ifndef FWOOSH_H
-# define FWOOSH_H
+#define FWOOSH_H
 
-# include "ASpell.hpp"
+#include "ASpell.hpp"
 
-class Fwoosh : public ASpell
+class Fwoosh: public ASpell
 {
 	public:
 		Fwoosh(void);
 		~Fwoosh(void);
 
-		ASpell*	clone(void) const;
+		ASpell * clone(void) const;
 };
 
 #endif

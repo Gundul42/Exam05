@@ -2,20 +2,19 @@
 # define ASPELL_H
 
 # include <iostream>
+# include <string>
 # include "ATarget.hpp"
-
 class ATarget;
 
 class ASpell
 {
 	protected:
-
-		std::string	name;
-		std::string	effects;
-
 		ASpell(void);
 		ASpell(ASpell const & cpy);
 		ASpell & operator=(ASpell const & right);
+
+		std::string	name;
+		std::string	effects;
 
 	public:
 		ASpell(std::string n, std::string e);
@@ -23,10 +22,10 @@ class ASpell
 
 		std::string	getName(void) const;
 		std::string	getEffects(void) const;
-		
-		void		launch(ATarget const & tgt) const;
 
-		virtual ASpell*	clone(void) const = 0;
+		void	launch(ATarget const & tgt);
+
+		virtual ASpell *	clone(void) const = 0;
 };
 
 #endif

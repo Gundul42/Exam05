@@ -1,15 +1,15 @@
 #ifndef DUMMY_H
-# define DUMMY_H
+#define DUMMY_H
 
-# include "ATarget.hpp"
+#include "ATarget.hpp"
 
-class Dummy : public ATarget
+class Dummy: public ATarget
 {
 	public:
 		Dummy(void);
 		~Dummy(void);
 
-		ATarget*	clone(void) const;
+		ATarget * clone(void) const;
 };
 
 #endif

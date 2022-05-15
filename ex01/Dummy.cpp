@@ -1,12 +1,11 @@
 #include "Dummy.hpp"
 
-Dummy::Dummy(void): ATarget("Target Practice Dummy")
-{}
+Dummy::Dummy(void): ATarget("Target Practice Dummy") {}
 
-Dummy::~Dummy(void)
-{}
+Dummy::~Dummy(void) {}
 
-ATarget*	Dummy::clone(void) const
+ATarget * Dummy::clone(void) const
 {
-	return (new Dummy);
+	return (new Dummy());
 }
+

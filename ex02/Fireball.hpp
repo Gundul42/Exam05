@@ -1,15 +1,15 @@
 #ifndef FIREBALL_H
-# define FIREBALL_H
+#define FIREBALL_H
 
-# include "ASpell.hpp"
+#include "ASpell.hpp"
 
-class Fireball : public ASpell
+class Fireball: public ASpell
 {
 	public:
 		Fireball(void);
 		~Fireball(void);
 
-		ASpell*	clone(void) const;
+		ASpell * clone(void) const;
 };
 
 #endif

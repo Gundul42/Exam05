@@ -1,3 +1,4 @@
+//add come stuff
 #ifndef WARLOCK_H
 # define WARLOCK_H
 
@@ -7,23 +8,23 @@
 class Warlock
 {
 	private:
-		std::string	name;
-		std::string	title;
-
 		Warlock(void);
 		Warlock(Warlock const & cpy);
 		Warlock & operator=(Warlock const & right);
 
-	public:
+		std::string	name;
+		std::string	title;
 
-		Warlock(std::string const name, std::string const title);
+	public:
+		Warlock(std::string n, std::string t);
 		~Warlock(void);
 
-		std::string const &	getName(void) const;
-		std::string const &	getTitle(void) const;
-		void			setTitle(std::string const & nt);
+		std::string	getName(void) const;
+		std::string	getTitle(void) const;
 
-		void			introduce(void) const;
+		void		setTitle(std::string nt);
+
+		void		introduce(void) const;
 };
 
 #endif
